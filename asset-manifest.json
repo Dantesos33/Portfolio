@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.9a51460e.css",
+    "main.js": "/Portfolio/static/js/main.2ceb15ec.js",
+    "static/media/Muhaddis-mob.jpg": "/Portfolio/static/media/Muhaddis-mob.ae82ea3b65c9c87c827e.jpg",
+    "static/media/logo2.png": "/Portfolio/static/media/logo2.aa7a7a4aa619622fd33b.png",
+    "index.html": "/Portfolio/index.html",
+    "main.9a51460e.css.map": "/Portfolio/static/css/main.9a51460e.css.map",
+    "main.2ceb15ec.js.map": "/Portfolio/static/js/main.2ceb15ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a51460e.css",
+    "static/js/main.2ceb15ec.js"
+  ]
+}
