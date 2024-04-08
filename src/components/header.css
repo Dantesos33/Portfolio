@@ -1,0 +1,10 @@
+.active{
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    nav{
+        position: fixed;
+        bottom: 16px;
+    }
+}

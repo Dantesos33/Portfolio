@@ -1,0 +1,32 @@
+.progress-bar{
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+}
+
+.progress-bar .progress-line{
+    position: absolute;
+    left: -1px;
+    width: 0;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.8s;
+}
+
+.progress-bar:hover .progress-line{
+    width: 100%;
+}
+
+.progress-bar .progress-line .progress-percent{
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    left: 50%;
+    top: -3px;
+    font-size: 0.7rem;
+    z-index: 1;
+    transform: translateX(-50%);
+}
