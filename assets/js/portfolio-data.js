@@ -55,29 +55,75 @@ window.portfolioData = {
   ],
   portfolio: [
     {
+      title: "Xounity",
+      description: "Built using Next JS and Tailwind CSS",
+      category: "next-js",
+      image: "assets/img/portfolio/web-6.png",
+      link: "https://xounity-web.vercel.app/"
+    },
+    {
+      title: "SchooLMS",
+      description: "Built using Next JS, Prisma, Postgres and Tailwind CSS",
+      category: "next-js",
+      image: "assets/img/portfolio/web-9.png",
+      link: "https://school-management-system-bice-chi.vercel.app/"
+    },
+    {
+      title: "Sunny Side",
+      description: "Built using HTML, CSS, JS",
+      category: "html-css",
+      image: "assets/img/portfolio/web-4.png",
+      link: "https://deessunnyside.netlify.app/"
+    },
+    {
+      title: "Pong Game",
+      description: "Built using Html Canvas and JS",
+      category: "html-css",
+      image: "assets/img/portfolio/web-7.png",
+      link: "https://deespong.netlify.app/"
+    },
+    {
       title: "Amazon Clone",
       description: "Built using HTML, CSS, JS",
+      category: "html-css",
       image: "assets/img/portfolio/web-1.png",
       link: "https://deesamazon.netlify.app/"
     },
     {
       title: "Netflix Clone",
       description: "Built using HTML, CSS, JS",
+      category: "html-css",
       image: "assets/img/portfolio/web-2.png",
       link: "https://deesnetflix.netlify.app/"
     },
     {
       title: "ToDo Web App",
-      description: "Built using React JS and Tailwind CSS",
+      description: "Built using Next JS and Tailwind CSS",
+      category: "next-js",
       image: "assets/img/portfolio/other-1.png",
       link: "https://deestodoapp.netlify.app"
     },
     {
-      title: "ToDo Web App",
-      description: "Built using React JS and Tailwind CSS",
-      image: "assets/img/portfolio/other-1.png",
-      link: "https://deestodoapp.netlify.app"
-    }
+      title: "Python Programs",
+      description: "Built using HTML, CSS, JS",
+      category: "html-css",
+      image: "assets/img/portfolio/web-3.png",
+      link: "https://deespython.netlify.app/"
+    },
+    {
+      title: "MoviesFlix",
+      description: "Built using HTML, CSS, JS",
+      category: "html-css",
+      image: "assets/img/portfolio/web-5.png",
+      link: "https://deesnetflix.netlify.app/"
+    },
+    {
+      title: "Notes App",
+      description: "Built using Html Canvas and JS",
+      category: "html-css",
+      image: "assets/img/portfolio/web-8.png",
+      link: "https://deesnotesapp.netlify.app/"
+    },
   ],
   footer: {
     designerName: "Muhaddis Afzal",
