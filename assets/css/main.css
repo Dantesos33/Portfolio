@@ -28,27 +28,27 @@
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    /* --- LIGHT THEME (Default Original) --- */
-    --color-primary: #0284c7;
-    --color-primary-hover: #0369a1;
-    --color-primary-subtle: rgba(2, 132, 199, 0.08);
+    /* --- LIGHT THEME (Soft & Muted Tone Overrides) --- */
+    --color-primary: #0369a1;
+    --color-primary-hover: #075985;
+    --color-primary-subtle: rgba(3, 105, 161, 0.06);
 
-    --bg-primary: #f8fafc;
-    --bg-surface: #ffffff;
-    --bg-elevated: #ffffff;
+    --bg-primary: #f1f5f9;
+    --bg-surface: #e2e8f0;
+    --bg-elevated: #cbd5e1;
 
-    --text-heading: #0f172a;
-    --text-main: #334155;
+    --text-heading: #1e293b;
+    --text-main: #475569;
     --text-muted: #64748b;
 
-    --border-color: rgba(0, 0, 0, 0.08);
-    --border-hover: rgba(0, 0, 0, 0.16);
+    --border-color: rgba(0, 0, 0, 0.12);
+    --border-hover: rgba(0, 0, 0, 0.22);
 
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 20px -4px rgba(0, 0, 0, 0.06);
 
-    --header-bg: rgba(255, 255, 255, 0.88);
-    --header-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+    --header-bg: rgba(241, 245, 249, 0.9);
+    --header-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
   }
 
   /* --- DARK THEME OVERRIDES --- */
@@ -122,37 +122,8 @@
     background-color: var(--bg-primary) !important;
     color: var(--text-main) !important;
     line-height: 1.6;
-    /* Smooth background color transition when scrolling between sections */
-    transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                color var(--speed-base) var(--ease-out);
+    transition: color var(--speed-base) var(--ease-out);
     overflow-x: hidden;
-  }
-
-  /* --- DYNAMIC SCROLL BACKGROUND OVERRIDES --- */
-  body.section-hero-active {
-    background-color: var(--bg-primary) !important;
-  }
-
-  body.section-about-active {
-    background-color: #f1f5f9 !important;
-  }
-  [data-theme="dark"] body.section-about-active {
-    background-color: #0f172a !important;
-  }
-
-  body.section-skills-active {
-    background-color: var(--bg-primary) !important;
-  }
-
-  body.section-resume-active {
-    background-color: #f1f5f9 !important;
-  }
-  [data-theme="dark"] body.section-resume-active {
-    background-color: #0d1322 !important;
-  }
-
-  body.section-contact-active {
-    background-color: var(--bg-primary) !important;
   }
 
   /* Universal Headings Rule */
@@ -293,11 +264,10 @@
     color: var(--color-primary) !important;
   }
 
-  /* Footer (Fixed to prevent bottom-nav overlap on mobile) */
+  /* Footer */
   #footer, .footer {
     border-top: 1px solid var(--border-color) !important;
     background-color: var(--bg-surface) !important;
-    /* Extra padding-bottom adds clearance for mobile bottom-nav without changing layout heights */
     padding: 2.5rem 0 calc(var(--bottom-nav-height) + 1.5rem) 0 !important;
     color: var(--text-muted) !important;
     position: relative;
@@ -316,7 +286,7 @@
 }
 
 /* ==========================================================================
-   5. COMPONENTS (Cards, Buttons, Inputs, Indicators)
+   5. COMPONENTS
    ========================================================================== */
 @layer components {
   /* Base Card Rules */
@@ -386,13 +356,42 @@
 }
 
 /* ==========================================================================
-   6. SECTION SPECIFIC STYLES
+   6. SECTION SPECIFIC STYLES & SMOOTH PER-SECTION FADE
    ========================================================================== */
 @layer sections {
+  /* Base section style: set base color and explicit transition properties */
   section.section {
     padding: 5rem 0;
+    position: relative;
+    background-color: var(--bg-primary);
+    transition: background-color 2s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 
+  /* --- LIGHT THEME SECTION ACCENTS --- */
+  section.section#about.is-active,
+  section.section#portfolio.is-active {
+    background-color: #e2e8f0;
+  }
+
+  section.section#skills.is-active,
+  section.section#contact.is-active,
+  section.section#hero.is-active {
+    background-color: #f1f5f9;
+  }
+
+  /* --- DARK THEME SECTION ACCENTS --- */
+  [data-theme="dark"] section.section#about.is-active,
+  [data-theme="dark"] section.section#portfolio.is-active {
+    background-color: #0f172a;
+  }
+
+  [data-theme="dark"] section.section#skills.is-active,
+  [data-theme="dark"] section.section#contact.is-active,
+  [data-theme="dark"] section.section#hero.is-active {
+    background-color: #0b0f19;
+  }
+
+  /* Typography & Component Specifics within Sections */
   .section-title h2 {
     color: var(--text-heading) !important;
     position: relative;
@@ -404,8 +403,44 @@
   }
 
   #hero {
+    position: relative;
     min-height: 100vh;
     min-height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* --- HERO SVG LINE ANIMATION CONTAINERS (Strictly Contained Mobile Fix) --- */
+  .hero-bg-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg-line svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* Forces the full SVG bounds to fit entirely inside the container viewport */
+    preserveAspectRatio: xMidYMid meet;
+  }
+
+  #hero .container,
+  #hero .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
   }
 
   .about-card .stat-badge {
@@ -449,6 +484,34 @@
     font-weight: 600;
     margin-bottom: 0.75rem;
   }
+
+  /* Portfolio Pagination Styling */
+  .portfolio-pagination .page-item .page-link {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0.5rem 0.75rem;
+    transition: all var(--speed-fast) var(--ease-out);
+  }
+
+  .portfolio-pagination .page-item .page-link:hover {
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+  }
+
+  .portfolio-pagination .page-item.active .page-link {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: #ffffff !important;
+  }
+
+  .portfolio-pagination .page-item.disabled .page-link {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-muted) !important;
+    opacity: 0.5;
+    border-color: var(--border-color) !important;
+  }
 }
 
 /* ==========================================================================
@@ -465,5 +528,27 @@
   [data-aos="fade-up"].aos-animate {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+
+  /* --- CUSTOM PATH LINE DRAWING KEYFRAMES (Slower & Fluid) --- */
+  .animated-custom-line {
+    stroke-dasharray: 5500;
+    stroke-dashoffset: 5500;
+    animation: drawCustomLine 9.5s cubic-bezier(0.16, 1, 0.3, 1) forwards infinite alternate;
+    filter: drop-shadow(0 0 12px var(--color-primary));
+  }
+
+  @keyframes drawCustomLine {
+    0% {
+      stroke-dashoffset: 5500;
+      opacity: 0.15;
+    }
+    50% {
+      opacity: 0.9;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.7;
+    }
   }
 }

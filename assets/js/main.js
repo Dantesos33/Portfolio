@@ -3,6 +3,11 @@
 * Modernized Object-Oriented Architecture
 */
 
+// Disable browser's auto scroll restoration on reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 class ThemeManager {
   constructor() {
     this.currentTheme = localStorage.getItem('theme') || 'dark';
@@ -33,7 +38,6 @@ class ThemeManager {
   }
 
   updateIcon() {
-    // Query dynamically every time updateIcon is called so it finds injected buttons
     const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
     
     toggleBtns.forEach((btn) => {
@@ -46,6 +50,37 @@ class ThemeManager {
         }
       }
     });
+  }
+}
+
+class SectionRevealManager {
+  constructor() {
+    this.sections = document.querySelectorAll('section');
+    this.init();
+  }
+
+  init() {
+    const observerOptions = {
+      root: null,
+      // threshold: 0.2 means trigger when 20% visible
+      // rootMargin extends the detection zone for short sections like #contact
+      rootMargin: '-10% 0px -20% 0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-active');
+          // Set active attribute on body for global smooth color morphing
+          document.body.setAttribute('data-active-section', entry.target.id);
+        } else {
+          entry.target.classList.remove('is-active');
+        }
+      });
+    }, observerOptions);
+
+    this.sections.forEach(section => observer.observe(section));
   }
 }
 
@@ -75,7 +110,7 @@ class SectionObserverManager {
                 document.body.classList.remove(className);
               }
             });
-            // Add active section class
+            // Add active section class to <body>
             document.body.classList.add(`section-${sectionId}-active`);
           }
         }
@@ -95,13 +130,11 @@ class NavigationManager {
     this.init();
   }
 
-  // Utility to dynamically fetch the header height (defaults to 70px if missing)
   getHeaderHeight() {
     return this.header ? this.header.offsetHeight : 70;
   }
 
   init() {
-    // ScrollSpy & Initial Hash handling
     window.addEventListener('load', () => {
       this.handleScrollspy();
       this.handleHashScroll();
@@ -119,16 +152,13 @@ class NavigationManager {
       });
     }
 
-    // Handle clicks on internal anchor links (#)
     this.navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const hash = link.hash;
         if (hash && document.querySelector(hash)) {
           e.preventDefault();
-          
           this.scrollToElement(document.querySelector(hash));
 
-          // Close mobile drawer menu if open
           if (this.header && this.header.classList.contains('header-show')) {
             this.header.classList.remove('header-show');
           }
@@ -137,9 +167,6 @@ class NavigationManager {
     });
   }
 
-  /**
-   * Smoothly scrolls to a target section taking into account header height
-   */
   scrollToElement(targetElement) {
     const headerOffset = this.getHeaderHeight();
     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
@@ -161,12 +188,9 @@ class NavigationManager {
     }
   }
 
-  /**
-   * ScrollSpy: Active link detection calculated relative to header height
-   */
   handleScrollspy() {
     const headerHeight = this.getHeaderHeight();
-    const position = window.scrollY + headerHeight + 10; // 10px buffer for accuracy
+    const position = window.scrollY + headerHeight + 10;
 
     this.sections.forEach(section => {
       const top = section.offsetTop;
@@ -185,9 +209,6 @@ class NavigationManager {
     });
   }
 
-  /**
-   * Adjusts page load scroll position if the URL contains a hash (#about, #contact, etc.)
-   */
   handleHashScroll() {
     if (window.location.hash) {
       const targetSection = document.querySelector(window.location.hash);
@@ -338,9 +359,12 @@ class AppInitializer {
 }
 
 // Bootstrap Application on DOM Ready
+// Remove SectionObserverManager (it conflicts by painting the body) 
+// and ensure SectionRevealManager runs:
+
 document.addEventListener('DOMContentLoaded', () => {
   new ThemeManager();
-  new SectionObserverManager();
+  new SectionRevealManager(); // <--- THIS WAS MISSING
   new NavigationManager();
   new AppInitializer();
 });

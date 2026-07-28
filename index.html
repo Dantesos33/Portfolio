@@ -40,8 +40,7 @@
       <ul class="nav-links d-flex align-items-center gap-3 list-unstyled mb-0">
         <li><a href="#hero" class="nav-link-item active"><i class="bi bi-house me-1"></i>Home</a></li>
         <li><a href="#about" class="nav-link-item"><i class="bi bi-person me-1"></i>About</a></li>
-        <li><a href="#resume" class="nav-link-item"><i class="bi bi-file-earmark-text me-1"></i>Resume</a></li>
-        <li><a href="#portfolio" class="nav-link-item"><i class="bi bi-images me-1"></i>Portfolio</a></li>
+        <li><a href="#portfolio" class="nav-link-item"><i class="bi bi-images me-1"></i>Projects</a></li>
         <li><a href="#contact" class="nav-link-item"><i class="bi bi-envelope me-1"></i>Contact</a></li>
       </ul>
     </nav>
@@ -77,11 +76,7 @@
         <a href="#about" class="text-decoration-none"><i class="bi bi-person fs-5"></i><span>About</span></a>
       </li>
       <li class="bottom-nav-item">
-        <a href="#resume" class="text-decoration-none"><i
-            class="bi bi-file-earmark-text fs-5"></i><span>Resume</span></a>
-      </li>
-      <li class="bottom-nav-item">
-        <a href="#portfolio" class="text-decoration-none"><i class="bi bi-images fs-5"></i><span>Portfolio</span></a>
+        <a href="#portfolio" class="text-decoration-none"><i class="bi bi-images fs-5"></i><span>Projects</span></a>
       </li>
       <li class="bottom-nav-item">
         <a href="#contact" class="text-decoration-none"><i class="bi bi-envelope fs-5"></i><span>Contact</span></a>
@@ -93,6 +88,15 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section text-center d-flex align-items-center justify-content-center">
+      <div class="hero-bg-line" aria-hidden="true">
+        <svg viewBox="0 0 2532 805" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <path class="animated-custom-line"
+            d="M2520.5 199.255C2467.67 174.755 2347.3 140.455 2288.5 199.255C2229.7 258.055 2105.67 223.755 2051 199.255C2017 174.755 1912.8 140.455 1768 199.255C1704 344.421 1553.3 618.955 1462.5 555.755C1371.7 492.555 1398 208.755 1422.5 74.7547C1313.17 163.421 1102.4 355.455 1134 414.255C1084.83 270.755 952.6 -7.14529 817 29.2547C681.4 65.6547 760.5 527.421 817 753.755C622.833 642.421 189.2 433.355 8 487.755"
+            stroke="currentColor" stroke-width="32" vector-effect="non-scaling-stroke" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+
       <div class="container animate-float-up" data-aos="fade-up">
         <h2 class="display-3 fw-bold mb-3">Muhaddis Afzal</h2>
         <p class="fs-4">I'm <span class="typed text-primary"></span></p>
@@ -231,84 +235,37 @@
       </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section py-5">
+    <!-- Projects Section -->
+    <section id="portfolio" class="portfolio section py-5">
       <div class="container section-title text-center mb-5" data-aos="fade-up">
-        <h2 class="fw-bold">Resume</h2>
-        <p class="text-muted">My educational background and professional experience</p>
+        <h2 class="fw-bold">Projects</h2>
+        <p class="text-muted">Explore my recent work across different technologies</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4">
-          <!-- Education Column -->
-          <div class="col-lg-6">
-            <h3 class="h4 mb-4 text-primary"><i class="bi bi-mortarboard-fill me-2"></i>Education</h3>
-
-            <div class="resume-item pb-4 mb-4 position-relative ps-4">
-              <h4>B.S. in Software Engineering</h4>
-              <h5>2022 - 2026</h5>
-              <p class="mb-1"><em>SMI University — Karachi, Pakistan</em></p>
-              <p class="text-muted small">Focused on core software engineering principles, full-stack web architectures,
-                database design, and object-oriented programming.</p>
-            </div>
-
-            <div class="resume-item pb-4 position-relative ps-4">
-              <h4>Intermediate in Computer Science</h4>
-              <h5>2020 - 2022</h5>
-              <p class="mb-1"><em>St. Patrick's College — Karachi, Pakistan</em></p>
-              <p class="text-muted small">Built early foundations in computer algorithms, mathematics, and programming
-                fundamentals.</p>
-            </div>
-          </div>
-
-          <!-- Experience Column -->
-          <div class="col-lg-6">
-            <h3 class="h4 mb-4 text-primary"><i class="bi bi-briefcase-fill me-2"></i>Professional Experience</h3>
-
-            <div class="resume-item pb-4 mb-4 position-relative ps-4">
-              <h4>Laravel Developer</h4>
-              <h5>July 2025 - Dec 2025</h5>
-              <p class="mb-2"><em>MetroWeb Technologies</em></p>
-              <ul class="text-muted small">
-                <li>Developed dynamic web applications, converting wireframes into Blade template frontend views.</li>
-                <li>Optimized Eloquent queries and MySQL/PostgreSQL indexing to improve API response speeds.</li>
-                <li>Implemented role-based access control (RBAC), user authentication, and data encryption protocols.
-                </li>
-                <li>Wrote PSR-compliant, maintainable PHP code and implemented unit testing for production stability.
-                </li>
-              </ul>
-            </div>
-
-            <div class="resume-item pb-4 position-relative ps-4">
-              <h4>Full Stack Developer (Internship)</h4>
-              <h5>May 2025 - Jun 2025</h5>
-              <p class="mb-2"><em>DevelopersHub Corporation</em></p>
-              <ul class="text-muted small">
-                <li>Created responsive UI components using HTML, CSS, React.js, and Tailwind CSS.</li>
-                <li>Designed and deployed secure RESTful APIs using Laravel and PHP backend logic.</li>
-                <li>Integrated relational database management using MySQL and PostgreSQL for user data storage.</li>
-              </ul>
+        <!-- Project Filters -->
+        <div class="row mb-4">
+          <div class="col-12 text-center">
+            <div class="portfolio-filters btn-group" role="group" aria-label="Project filters">
+              <button type="button" class="btn btn-primary active" data-filter="all">All</button>
+              <button type="button" class="btn btn-outline-primary" data-filter="next-js">Next Js</button>
+              <button type="button" class="btn btn-outline-primary" data-filter="laravel">Laravel</button>
+              <button type="button" class="btn btn-outline-primary" data-filter="html-css">Html Css</button>
             </div>
           </div>
         </div>
 
-        <!-- Download Resume Action -->
-        <div class="text-center mt-5">
-          <a href="./assets/cv/Laravel CV.pdf" target="_blank" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm">
-            <i class="bi bi-file-earmark-arrow-down me-2"></i>View Full Resume (PDF)
-          </a>
+        <!-- Portfolio Items Grid -->
+        <div class="row gy-4 portfolio-grid">
+          <!-- Items will be dynamically populated or empty state shown -->
         </div>
-      </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section py-5">
-      <div class="container section-title text-center mb-5" data-aos="fade-up">
-        <h2 class="fw-bold">Portfolio</h2>
-      </div>
-
-      <div class="container">
-        <div class="row gy-4"></div>
+        <!-- Pagination Controls -->
+        <nav aria-label="Projects Page Navigation" class="mt-5">
+          <ul class="pagination justify-content-center portfolio-pagination mb-0">
+            <!-- Pagination buttons populated dynamically -->
+          </ul>
+        </nav>
       </div>
     </section>
 
@@ -394,7 +351,6 @@
     (function () {
       if (typeof portfolioData === 'undefined') return;
 
-
       // Hero Section
       const typedSpan = document.querySelector('#hero .typed');
       if (typedSpan && portfolioData.hero?.typedItems) {
@@ -448,53 +404,123 @@
         `;
       }
 
-      // Resume Section
-      const resumeRow = document.querySelector('#resume .row');
-      if (resumeRow) {
-        const educationHTML = portfolioData.education.map(item => `
-          <div class="resume-item border-start border-primary border-2 ps-3 mb-4">
-            <h4>${item.degree}</h4>
-            <h5>${item.years}</h5>
-            <p><em>${item.institution}</em></p>
-          </div>
-        `).join('');
+      // Projects (Portfolio) Section with Filtering & Active Filter State Styling
+      // Projects (Portfolio) Section with Filtering, Pagination & Active Filter State Styling
+      const portfolioContainer = document.querySelector('#portfolio .portfolio-grid');
+      const paginationContainer = document.querySelector('#portfolio .portfolio-pagination');
+      const filterButtons = document.querySelectorAll('.portfolio-filters button');
 
-        const experienceHTML = portfolioData.experience.map(item => `
-          <div class="resume-item border-start border-primary border-2 ps-3 mb-4">
-            <h4>${item.role}</h4>
-            <h5>${item.years}</h5>
-            <p><em>${item.company}</em></p>
-            <ul>${item.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul>
-          </div>
-        `).join('');
-
-        resumeRow.innerHTML = `
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title fw-bold text-primary mb-3">Education</h3>
-            ${educationHTML}
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title fw-bold text-primary mb-3">Experience</h3>
-            ${experienceHTML}
-          </div>
-        `;
-      }
-
-      // Portfolio Section
-      const portfolioContainer = document.querySelector('#portfolio .row');
       if (portfolioContainer && portfolioData.portfolio) {
-        portfolioContainer.innerHTML = portfolioData.portfolio.map((item, idx) => `
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
-            <div class="card h-100 shadow-sm border-0">
-              <img src="${item.image}" class="card-img-top" alt="${item.title}">
-              <div class="card-body">
-                <h5 class="card-title fw-bold">${item.title}</h5>
-                <p class="card-text text-muted">${item.description}</p>
-                <a href="${item.link}" target="_blank" rel="noreferrer" class="btn btn-outline-primary btn-sm">Live Demo</a>
+        let currentFilter = 'all';
+        let currentPage = 1;
+        const itemsPerPage = 3; // Change this number to show more/less items per page
+
+        const renderProjects = (filter = 'all', page = 1) => {
+          currentFilter = filter;
+          currentPage = page;
+
+          const filteredItems = filter === 'all'
+            ? portfolioData.portfolio
+            : portfolioData.portfolio.filter(item => item.category === filter);
+
+          if (filteredItems.length === 0) {
+            portfolioContainer.innerHTML = `
+              <div class="col-12 text-center py-5">
+                <div class="p-4 card border-0 shadow-sm mx-auto" style="max-width: 450px; background-color: var(--bg-surface);">
+                  <i class="bi bi-folder2-open display-4 text-muted mb-3"></i>
+                  <h4 class="text-heading fw-bold mb-2">No projects yet</h4>
+                  <p class="text-muted mb-0">Check back later or switch filters to explore more work.</p>
+                </div>
+              </div>
+            `;
+            if (paginationContainer) paginationContainer.innerHTML = '';
+            return;
+          }
+
+          // Pagination Calculations
+          const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+          const startIndex = (page - 1) * itemsPerPage;
+          const paginatedItems = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+
+          // Render Grid Items
+          portfolioContainer.innerHTML = paginatedItems.map((item, idx) => `
+            <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+              <div class="card h-100 shadow-sm border-0">
+                <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">${item.title}</h5>
+                  <p class="card-text text-muted">${item.description}</p>
+                  <a href="${item.link}" target="_blank" rel="noreferrer" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                </div>
               </div>
             </div>
-          </div>
-        `).join('');
+          `).join('');
+
+          // Render Pagination Controls if totalPages > 1
+          if (paginationContainer) {
+            if (totalPages <= 1) {
+              paginationContainer.innerHTML = '';
+              return;
+            }
+
+            let paginationHTML = `
+              <li class="page-item ${page === 1 ? 'disabled' : ''}">
+                <button class="page-link" data-page="${page - 1}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </button>
+              </li>
+            `;
+
+            for (let i = 1; i <= totalPages; i++) {
+              paginationHTML += `
+                <li class="page-item ${page === i ? 'active' : ''}">
+                  <button class="page-link" data-page="${i}">${i}</button>
+                </li>
+              `;
+            }
+
+            paginationHTML += `
+              <li class="page-item ${page === totalPages ? 'disabled' : ''}">
+                <button class="page-link" data-page="${page + 1}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </button>
+              </li>
+            `;
+
+            paginationContainer.innerHTML = paginationHTML;
+
+            // Add Event Listeners to Pagination Buttons
+            paginationContainer.querySelectorAll('.page-link').forEach(btn => {
+              btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = parseInt(btn.getAttribute('data-page'));
+                if (!isNaN(targetPage) && targetPage >= 1 && targetPage <= totalPages) {
+                  renderProjects(currentFilter, targetPage);
+                  // Smoothly scroll back to top of portfolio section on page change
+                  document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+                }
+              });
+            });
+          }
+        };
+
+        // Initial render on page load
+        renderProjects('all', 1);
+
+        // Filter button click event listeners with active style toggling & reset to page 1
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => {
+              btn.classList.remove('active', 'btn-primary');
+              btn.classList.add('btn-outline-primary');
+            });
+            button.classList.remove('btn-outline-primary');
+            button.classList.add('active', 'btn-primary');
+
+            const filterValue = button.getAttribute('data-filter');
+            renderProjects(filterValue, 1);
+          });
+        });
       }
 
       // Footer

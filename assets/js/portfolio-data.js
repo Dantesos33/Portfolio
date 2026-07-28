@@ -14,11 +14,11 @@ window.portfolioData = {
     description: "I specialize in building clean, optimized, and scalable web applications with intuitive design patterns.",
     image: "assets/img/my-profile-img.jpg",
     details: [
-      { label: "Website", value: "example.com" },
-      { label: "Phone", value: "+123 456 7890" },
-      { label: "City", value: "New York, USA" },
-      { label: "Degree", value: "Master in CS" },
-      { label: "Email", value: "email@example.com" },
+      { label: "Website", value: "deesfolio.netlify.app" },
+      { label: "Phone", value: "+923248273507" },
+      { label: "City", value: "Karachi, Pakistan" },
+      { label: "Degree", value: "Bachelor in Software Engineering" },
+      { label: "Email", value: "muhaddisafzal@gmail.com" },
       { label: "Freelance", value: "Available" }
     ]
   },
@@ -65,6 +65,12 @@ window.portfolioData = {
       description: "Built using HTML, CSS, JS",
       image: "assets/img/portfolio/web-2.png",
       link: "https://deesnetflix.netlify.app/"
+    },
+    {
+      title: "ToDo Web App",
+      description: "Built using React JS and Tailwind CSS",
+      image: "assets/img/portfolio/other-1.png",
+      link: "https://deestodoapp.netlify.app"
     },
     {
       title: "ToDo Web App",
