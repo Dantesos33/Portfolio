@@ -22,14 +22,6 @@ window.portfolioData = {
       { label: "Freelance", value: "Available" }
     ]
   },
-  skills: [
-    { name: "HTML / CSS", percentage: 95 },
-    { name: "JavaScript", percentage: 85 },
-    { name: "React JS", percentage: 70 },
-    { name: "C#", percentage: 80 },
-    { name: "MySQL", percentage: 80 },
-    { name: "Python / PHP", percentage: 60 }
-  ],
   education: [
     {
       degree: "Bachelor in Software Engineering",
@@ -40,17 +32,6 @@ window.portfolioData = {
       degree: "Intermediate",
       years: "2020 - 2022",
       institution: "St Patrick's College, Karachi"
-    }
-  ],
-  experience: [
-    {
-      role: "Web Developer",
-      years: "2022 - Present",
-      company: "Freelance / Project Experience",
-      responsibilities: [
-        "Developing responsive web apps utilizing HTML5, CSS3, JavaScript, and React.",
-        "Designing user interfaces focused on mobile-first architecture."
-      ]
     }
   ],
   portfolio: [
@@ -67,6 +48,34 @@ window.portfolioData = {
       category: "next-js",
       image: "assets/img/portfolio/web-9.png",
       link: "https://school-management-system-bice-chi.vercel.app/"
+    },
+    {
+      title: "Blog App",
+      description: "Built using Laravel, MySQL and Tailwind CSS",
+      category: "laravel",
+      image: "assets/img/portfolio/web-10.png",
+      link: "https://deesblogapp.netlify.app/"
+    },
+    {
+      title: "Dees Connect",
+      description: "Built using Laravel, Supabase and Tailwind CSS",
+      category: "laravel",
+      image: "assets/img/portfolio/web-11.png",
+      link: "https://deesconnect.netlify.app/"
+    },
+    {
+      title: "Dees Mart",
+      description: "Built using Laravel, NextJS and Tailwind CSS",
+      category: "laravel",
+      image: "assets/img/portfolio/web-13.png",
+      link: "https://deesmart.netlify.app/"
+    },
+    {
+      title: "Dees Electric",
+      description: "Built using Laravel, MySQL and Tailwind CSS",
+      category: "laravel",
+      image: "assets/img/portfolio/web-12.png",
+      link: "https://deeselectric.netlify.app/"
     },
     {
       title: "Sunny Side",
